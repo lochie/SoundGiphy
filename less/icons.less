@@ -1,0 +1,24 @@
+/* Icons */
+
+.IconSprite(@width, @height, @pos-x, @pos-y){
+	width: ~'@{width}px';
+	height: ~'@{height}px';
+	background-position: ~'@{pos-y}px @{pos-x}px';
+}
+.Icon(@url, @width, @height){
+	width: ~'@{width}px';
+	height: ~'@{height}px';
+	background-image: url(@url);
+	background-size: contain;
+}
+
+
+
+[class*='icn-']{
+	display: inline-block;
+	vertical-align: middle;
+	text-indent: -9999px;
+	background:no-repeat center;
+
+	&.icn-skate{	.Icon('../images/assets/skate.png', 71, 63); }
+}

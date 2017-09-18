@@ -1,0 +1,76 @@
+/* Colours */
+
+@white					: #ffffff;
+@black					: #0d0d0e;
+
+@grey					: mix(@black,@white,50);
+@grey-dark				: #222222;
+@grey-light				: mix(@black,@white,20);
+
+@primary				: #76c2af;
+@primary-dark			: darken(@primary,10);
+
+@secondary				: #465363;
+@secondary-dark			: darken(@secondary,10);
+
+@accent					: #c30c6f;
+@accent-dark			: #f58d27;
+
+@error					: #c75c5c;
+@valid					: #61c75c;
+
+@dim					: fade(#000, 50);
+@dimmer					: fade(#000, 80);
+
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,700');
+
+@font-size 				: 16px;
+@font-line-height		: 1;
+
+@font-primary			: "Open Sans", "Helvetica", Arial, sans-serif;
+@font-secondary			: "Montserrat", "Helvetica", Arial, sans-serif;
+
+@font-weight-light		: 300;
+@font-weight-regular	: 400;
+@font-weight-semibold	: 600;
+@font-weight-bold		: 700;
+@font-weight-black		: 800;
+
+
+/* Layout */
+@max-width				: 960px;
+
+
+/* Breakpoints */
+@bp-one					: @max-width;
+@bp-two					: 860px;
+@bp-three				: 480px;
+@bp-four				: 320px;
+
+
+/* Animation */
+@animation-speed		: 0.25s;
+
+
+/* Specific Variables */
+	
+// Base
+	@color				: @white;
+	@background			: @secondary;
+	@hr					: @primary-dark;
+
+	@box-shadow			: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+
+
+// Hyperlinks
+	@link-color			: @white;
+	@link-hover-color	: @primary;
+
+// Button
+	@button-color		: @white;
+	@button-bg			: @secondary;
+
+
+	

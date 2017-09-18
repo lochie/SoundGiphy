@@ -1,0 +1,126 @@
+/* Mixins */
+.Transitions( @range: all, @time: @animation-speed, @ease: ease-in-out ) {
+	-moz-transition:		@arguments;
+	-webkit-transition:		@arguments;
+	-o-transition:			@arguments;
+	transition:				@arguments;
+}
+
+.BorderRadius( @corner: @border-radius ) {
+	-webkit-border-radius: 	@arguments;
+	-moz-border-radius: 	@arguments;
+	border-radius: 			@arguments;
+}
+
+.BoxShadow( @shadow: @box-shadow){
+	-moz-box-shadow:       @arguments;
+	-webkit-box-shadow:    @arguments;
+	box-shadow:            @arguments;
+}
+
+@slant: 10%;
+.SlantedBottomLeft(){
+	@polygon: polygon(0 0, 100% 0, 100% 100%-@slant, 0 100%);
+	-webkit-clip-path: @polygon;
+	clip-path: @polygon;
+}
+.SlantedBottomRight(){
+	@polygon: polygon(0 0, 100% 0, 100% 100%, 0 100%-@slant);
+	-webkit-clip-path: @polygon;
+	clip-path: @polygon;
+}
+.SlantedTopRight(@s: @slant){
+	@polygon: polygon(0 0, 100% @s, 100% 100%, 0 100%);
+	-webkit-clip-path: @polygon;
+	clip-path: @polygon;
+}
+.SlantedTopLeft(@s: @slant){
+	@polygon: polygon(0 @s, 100% 0, 100% 100%, 0 100%);
+	-webkit-clip-path: @polygon;
+	clip-path: @polygon;
+}
+
+.Columns( @amount ){
+	column-count:@amount;
+	-moz-column-count:@amount; /* Firefox */
+	-webkit-column-count:@amount; /* Safari and Chrome */
+}
+
+.TextShadow(){
+	text-shadow:
+		0 0 30px fade(black, 25),
+		0 3px 4px fade(black, 50);
+}
+
+.DropShadow(@color: black){
+	@shadow: 
+		0 0 30px fade(@color, 25),
+		0 3px 4px fade(@color, 50);
+	-moz-box-shadow:       @shadow;
+	-webkit-box-shadow:    @shadow;
+	box-shadow:            @shadow;
+}
+
+.Gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.GradientHorz (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(left, @startColor, @endColor);
+	background: -moz-linear-gradient(left, @startColor, @endColor);
+	background: -ms-linear-gradient(left, @startColor, @endColor);
+	background: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+
+.Animated(
+	@name:none,
+	@duration:1s,
+	@delay: 0s,
+	@iteration-count:1,
+	@timing-function:ease,
+	@fill-mode:both
+){
+
+	-webkit-animation-name: @name;
+	   -moz-animation-name: @name;
+		 -o-animation-name: @name;
+			animation-name: @name;
+
+	-webkit-animation-duration: @duration;
+	   -moz-animation-duration: @duration;
+		-ms-animation-duration: @duration;
+		 -o-animation-duration: @duration;
+			animation-duration: @duration;
+
+	-webkit-animation-delay: @delay;
+	   -moz-animation-delay: @delay;
+		-ms-animation-delay: @delay;
+		 -o-animation-delay: @delay;
+			animation-delay: @delay;
+
+	-webkit-animation-iteration-count: @iteration-count;
+	   -moz-animation-iteration-count: @iteration-count;
+		-ms-animation-iteration-count: @iteration-count;
+		 -o-animation-iteration-count: @iteration-count;
+			animation-iteration-count: @iteration-count;
+
+	-webkit-animation-timing-function: @timing-function;
+	   -moz-animation-timing-function: @timing-function;
+		-ms-animation-timing-function: @timing-function;
+		 -o-animation-timing-function: @timing-function;
+			animation-timing-function: @timing-function;
+
+	-webkit-animation-fill-mode: @fill-mode;
+	   -moz-animation-fill-mode: @fill-mode;
+		-ms-animation-fill-mode: @fill-mode;
+		 -o-animation-fill-mode: @fill-mode;
+			animation-fill-mode: @fill-mode;
+}

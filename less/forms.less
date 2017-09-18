@@ -1,0 +1,65 @@
+/* Base for Elements */
+button,
+input{
+	.Transitions;
+	position:relative;
+	display:inline-block;
+	vertical-align: middle;
+	outline:none;
+	line-height: 1;
+	font-size: 1.2em;
+	font-family:@font-primary;
+	font-weight:@font-weight-regular;
+	margin: 0 auto;
+	padding:0.5em 1em;
+	border:1px solid transparent;
+}
+
+/* Buttons */
+button {
+	z-index: 2;
+	cursor:pointer;
+	text-align:center;
+	color:@black;
+	padding: 1em 3em;
+	font-size: 0.9em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	.BorderRadius(10em);
+	background: @white;
+	&:hover{
+		color:@white;
+		background: @primary;
+	}
+}
+
+/* Fields */
+input{
+	max-width: 10em;
+	.BorderRadius(10em);
+	-webkit-appearance:none;
+	color:@white;
+	background:transparent;
+	
+	@color-placeholder:	@grey-light;
+	&::-webkit-input-placeholder{ 	color:@color-placeholder; 	}
+	&::-moz-placeholder{ 			color:@color-placeholder; 	}
+	&:-moz-placeholder{ 			color:@color-placeholder; 	}
+	&:-ms-input-placeholder{ 		color:@color-placeholder; 	}
+
+	.AutoFill(){
+		-webkit-transition-delay: 9999s;
+		-webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+	}
+	&:-webkit-autofill{ .AutoFill(); }
+	&:-webkit-autofill:hover{ .AutoFill(); }
+	&:-webkit-autofill:focus{ .AutoFill(); }
+	&:-webkit-autofill:active{ .AutoFill(); }
+}
+
+.capsule{
+	display: inline-block;
+	margin: 0 1em;
+	.BorderRadius(10em);
+	background: fade(black,30);
+}

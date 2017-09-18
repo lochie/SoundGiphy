@@ -1,0 +1,95 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+a:link, a:visited {background: transparent; color:@grey; text-decoration:none;}
+//a:link[href^="http://"]:after, a[href^="http://"]:visited:after { content: " (" attr(href) ") "; display:block; text-align:center; font-size: 11px;}
+a[href^="http://"] {color:@black;} 
+
+body{
+	font-size:10px;
+	color: @black !important;
+	background: @white;
+
+	h1,h2,h3,h4,h5,p,a,span,div{ color: @black !important; }
+
+	h1{ font-size: 15px !important; }
+	h2{ font-size: 14px !important; }
+	h3{ font-size: 13px !important; }
+	h4{ font-size: 12px !important; }
+	h5{ font-size: 11px !important; }
+
+	p{ padding: 1em 0; }
+
+	header.header{
+		.logo{
+			display: block;
+			width: 100px;
+			margin: 0 auto;
+		}
+	}
+	footer.footer{
+		background: none;
+	}
+	article .img{
+		position: relative;
+		vertical-align: top;
+		display: inline-block;
+	}
+
+	form{
+		input[type="radio"]{
+			/*
+			&+label{
+				margin: 0;
+				background: none;
+				height: auto;
+				width: 100%;
+				border:2px solid mix(black,white,10);
+			}
+			&:checked+label,
+			&.checked+label{
+				text-indent: 0;
+				border:2px solid black;
+			}
+			*/
+		}
+		label{
+			margin: 0 auto 1em;
+		}
+		input, select, textarea{
+			padding: 0.2em !important;
+		}
+
+		.field{
+			&.field_upload{ display: none; }
+		}
+	}
+
+
+	nav,
+	.button
+	{ display: none !important; }
+
+
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12{
+		display: block;
+		float: none;
+		width: 100% !important;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		&.alpha,&.omega{ width: 100%; }
+	}
+}

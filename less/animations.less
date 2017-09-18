@@ -1,0 +1,62 @@
+.fadeIn{
+	.Animated(fadeIn,0.5s);
+}
+	@-webkit-keyframes fadeIn{	.fadeInAnimation();	}
+	@-moz-keyframes fadeIn{		.fadeInAnimation();	}
+	@-o-keyframes fadeIn{		.fadeInAnimation();	}
+	@keyframes fadeIn{			.fadeInAnimation();	}
+	.fadeInAnimation(){
+		0%{
+			height:0;
+		}
+		100%{
+			height:1;
+		}
+	}
+
+.fadeInDown{
+	.Animated(fadeInDown,0.5s);
+}
+	@-webkit-keyframes fadeInDown{	.fadeInDownAnimation();	}
+	@-moz-keyframes fadeInDown{		.fadeInDownAnimation();	}
+	@-o-keyframes fadeInDown{		.fadeInDownAnimation();	}
+	@keyframes fadeInDown{			.fadeInDownAnimation();	}
+	.fadeInDownAnimation(){
+		0%{
+			height:0;
+			-webkit-transform:translate3d(0,-100%,0);
+			-ms-transform:translate3d(0,-100%,0);
+			transform:translate3d(0,-100%,0);
+		}
+		100%{
+			height:1;
+			-webkit-transform:none;
+			-ms-transform:none;
+			transform:none;
+		}
+	}
+
+.Spin{
+	.Animated(Spin, 1.81s, 0, infinite, linear);
+}
+
+	@-webkit-keyframes Spin{.spinAnimation;	}
+	@-moz-keyframes Spin{	.spinAnimation;	}
+	@-o-keyframes Spin{		.spinAnimation;	}
+	@keyframes Spin{		.spinAnimation;	}
+	.spinAnimation{
+		0% {
+			transform: 			rotate(0deg);
+			-ms-transform:		rotate(0deg); /* IE 9 */
+			-webkit-transform: 	rotate(0deg); /* Safari and Chrome */
+			-o-transform: 		rotate(0deg); /* Opera */
+			-moz-transform: 	rotate(0deg); /* Firefox */
+		}
+		100% {
+			transform: 			rotate(360deg);
+			-ms-transform:		rotate(360deg); /* IE 9 */
+			-webkit-transform: 	rotate(360deg); /* Safari and Chrome */
+			-o-transform: 		rotate(360deg); /* Opera */
+			-moz-transform: 	rotate(360deg); /* Firefox */
+		}
+	}
